@@ -1,0 +1,4 @@
+# Archivos y carpetas a ignorar
+node_modules/
+.next/
+*.log

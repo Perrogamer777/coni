@@ -1,0 +1,83 @@
+.container {
+  position: relative;
+  overflow: visible;
+}
+
+.interactiveLetter {
+  color: #ff6b6b;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  background: rgba(255, 107, 107, 0.2);
+  border: 2px solid #ff6b6b;
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.interactiveLetter .floatingImage {
+  position: absolute;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  pointer-events: none;
+  animation: fadeInUp 0.3s ease;
+  background: white;
+  padding: 6px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border: 2px solid #ff6b6b;
+}
+
+.interactiveLetter:hover {
+  background: rgba(255, 107, 107, 0.2);
+  border-color: #ff6b6b;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.floatingImage {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  z-index: 1000;
+  pointer-events: none;
+  animation: fadeInUp 0.3s ease;
+  background: white;
+  padding: 4px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.image {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ff6b6b;
+  background: white;
+  padding: 4px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -80%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .floatingImage {
+    transform: translate(-50%, -120%);
+  }
+  
+  .image {
+    width: 60px !important;
+    height: 60px !important;
+  }
+}

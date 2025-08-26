@@ -1,0 +1,88 @@
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(255, 107, 107, 0.3);
+  transition: all 0.3s ease;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.imageWrapper:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(255, 107, 107, 0.5);
+  border-color: #ff6b6b;
+}
+
+.footerImage {
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  filter: sepia(20%) saturate(120%) brightness(105%);
+}
+
+.imageWrapper:hover .footerImage {
+  filter: sepia(0%) saturate(150%) brightness(110%);
+}
+
+.imageWrapper:nth-child(1) {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.imageWrapper:nth-child(2) {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.imageWrapper:nth-child(3) {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.imageWrapper:nth-child(4) {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.imageWrapper:nth-child(5) {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.imageWrapper:nth-child(6) {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .imageContainer {
+    gap: 10px;
+  }
+  
+  .imageWrapper {
+    width: 50px;
+    height: 50px;
+  }
+}
