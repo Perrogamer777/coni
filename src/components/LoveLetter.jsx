@@ -64,8 +64,8 @@ const LoveLetter = ({ show, onClose }) => {
             </p>
             
             <div className={styles.imageSection}>
-              <Image
-                src="/images/caito.JPEG"
+              <img
+                src="/images/18.png"
                 alt="Imagen especial"
                 width={120}
                 height={120}
