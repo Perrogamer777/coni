@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 25px;
   color: #ff6b6b;
@@ -12,6 +12,10 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
   border: 2px solid transparent;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
 }
 
 .backButton:hover {
@@ -55,11 +59,50 @@
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
+.cornerImage {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  height: 120px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 3px solid #ff6b6b;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.cornerImage:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+}
+
+.cornerImageWide {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 180px;
+  height: 120px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 3px solid #ff6b6b;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  object-fit: cover;
+}
+
+.cornerImageWide:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+}
+
 @media (max-width: 768px) {
   .backButton {
     padding: 10px 20px;
     font-size: 0.9rem;
     margin-bottom: 20px;
+    bottom: 15px;
+    left: 15px;
   }
   
   .categoryEmoji {
@@ -69,5 +112,19 @@
   .categoryDescription {
     font-size: 1.1rem;
     padding: 0 20px;
+  }
+  
+  .cornerImage {
+    width: 80px;
+    height: 80px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .cornerImageWide {
+    width: 120px;
+    height: 80px;
+    bottom: 15px;
+    right: 15px;
   }
 }

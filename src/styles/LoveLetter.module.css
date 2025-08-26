@@ -4,7 +4,10 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, rgba(255, 107, 107, 0.9), rgba(255, 142, 142, 0.8));
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.4), rgba(255, 142, 142, 0.3)), url('/images/atar.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;

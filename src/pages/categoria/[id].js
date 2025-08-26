@@ -75,6 +75,24 @@ const CategoryPage = () => {
             />
           ))}
         </div>
+        
+        {/* Mostrar imagen del perrito solo en la categoría "Tú" */}
+        {category.id === 'como-eres' && (
+          <img
+            src="/images/perrito.JPG"
+            alt="Perrito"
+            className={categoryStyles.cornerImage}
+          />
+        )}
+        
+        {/* Mostrar imagen de bori solo en la categoría "Tu humor" */}
+        {category.id === 'garcioso' && (
+          <img
+            src="/images/bori.JPG"
+            alt="Bori"
+            className={categoryStyles.cornerImageWide}
+          />
+        )}
       </main>
       <Footer />
     </div>
