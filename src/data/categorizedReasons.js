@@ -31,7 +31,7 @@ export const categories = [
   {
     id: 'como-eres',
     title: 'Tú',
-    emoji: '🌟',
+    emoji: '🍒',
     description: 'Me gusta cmo eres',
     color: '#ffa8a8',
     reasons: [

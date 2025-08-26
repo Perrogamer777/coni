@@ -10,7 +10,8 @@ const FloatingImages = () => {
         '/images/8135a66e-6489-4d64-96f2-13efa2e4429a.png',
         '/images/c26f021f-7d31-4001-abdf-1642131c44d6.png',
         '/images/f3503469-0851-49c3-98ba-0926b9048ed4.png',
-        '/images/sentada.JPG'
+        '/images/sentada.JPG',
+        '/images/perrwecos.png'
     ];
 
     return (
