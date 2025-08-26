@@ -39,10 +39,10 @@ const InteractiveText = ({ text }) => {
     console.log('¿Incluye "Me gusta que nos riamos"?', text.includes('Me gusta que nos riamos'));
     
     // Buscar exactamente el texto que tenemos en los datos
-    if (text === '😄 Me gusta que nos riamos los D, V y N') {
+    if (text === '🌳 Me gusta que nos riamos los D, V y N') {
       return (
         <span>
-          😄 Me gusta que nos riamos los{' '}
+          🌳 Me gusta que nos riamos los{' '}
           <span
             className={styles.interactiveLetter}
             onMouseEnter={(e) => handleLetterHover('d', e)}

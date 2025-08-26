@@ -7,6 +7,7 @@ import FloatingImages from '../../components/FloatingImages';
 import ReasonCard from '../../components/ReasonCard';
 import SpecialGif from '../../components/SpecialGif';
 import { categories } from '../../data/categorizedReasons';
+import { useVisitedCategories } from '../../hooks/useVisitedCategories';
 import styles from '../../styles/Home.module.css';
 import categoryStyles from '../../styles/Category.module.css';
 
@@ -14,19 +15,32 @@ const CategoryPage = () => {
   const router = useRouter();
   const { id } = router.query;
   const [showSpecialGif, setShowSpecialGif] = useState(false);
+  const { markCategoryVisited } = useVisitedCategories();
   
   const category = categories.find(cat => cat.id === id);
   
   useEffect(() => {
-    if (category && category.id === 'lo-que-hacemos') {
-      // Mostrar el GIF después de un pequeño delay para que cargue la página
-      const timer = setTimeout(() => {
-        setShowSpecialGif(true);
-      }, 300);
+    if (category) {
+      // Marcar como visitada después de 2 segundos
+      const visitTimer = setTimeout(() => {
+        markCategoryVisited(category.id);
+      }, 2000);
+
+      // Mostrar GIF especial para "lo-que-hacemos"
+      if (category.id === 'lo-que-hacemos') {
+        const gifTimer = setTimeout(() => {
+          setShowSpecialGif(true);
+        }, 300);
+        
+        return () => {
+          clearTimeout(visitTimer);
+          clearTimeout(gifTimer);
+        };
+      }
       
-      return () => clearTimeout(timer);
+      return () => clearTimeout(visitTimer);
     }
-  }, [category]);
+  }, [category, markCategoryVisited]);
   
   if (!category) {
     return <div>Categoría no encontrada</div>;

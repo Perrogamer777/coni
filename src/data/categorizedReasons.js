@@ -47,7 +47,7 @@ export const categories = [
   {
     id: 'lo-que-hago',
     title: 'Lo que me dejas hacer',
-    emoji: '🤗',
+    emoji: '🧔🏻',
     description: 'Wardame más mokitos',
     color: '#ffb3b3',
     reasons: [
@@ -60,7 +60,7 @@ export const categories = [
   {
     id: 'garcioso',
     title: 'Tu humor',
-    emoji: '😄',
+    emoji: '🌳',
     description: 'megustas',
     color: '#ff9999',
     reasons: [
