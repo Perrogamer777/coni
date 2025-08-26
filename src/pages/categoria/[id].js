@@ -26,8 +26,8 @@ const CategoryPage = () => {
         markCategoryVisited(category.id);
       }, 2000);
 
-      // Mostrar GIF especial para "lo-que-hacemos"
-      if (category.id === 'lo-que-hacemos') {
+      // Mostrar GIF especial para "lo-que-hacemos" y "garcioso"
+      if (category.id === 'lo-que-hacemos' || category.id === 'garcioso') {
         const gifTimer = setTimeout(() => {
           setShowSpecialGif(true);
         }, 300);

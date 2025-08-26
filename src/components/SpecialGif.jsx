@@ -6,7 +6,7 @@ const SpecialGif = ({ categoryId, show }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (show && categoryId === 'lo-que-hacemos') {
+    if (show && (categoryId === 'lo-que-hacemos' || categoryId === 'garcioso')) {
       setIsVisible(true);
       
       // Ocultar después de 6 segundos
@@ -18,15 +18,32 @@ const SpecialGif = ({ categoryId, show }) => {
     }
   }, [show, categoryId]);
 
-  if (!isVisible || categoryId !== 'lo-que-hacemos') {
+  if (!isVisible || (categoryId !== 'lo-que-hacemos' && categoryId !== 'garcioso')) {
     return null;
   }
+
+  // Determinar qué GIF y mensaje mostrar según la categoría
+  const getGifContent = () => {
+    if (categoryId === 'lo-que-hacemos') {
+      return {
+        src: '/images/perlayif.gif',
+        message: '😰😰😰 aiii cuidao 😰😰😰'
+      };
+    } else if (categoryId === 'garcioso') {
+      return {
+        src: '/images/perlayif2.GIF',
+        message: '😰😰😰 yapooo ten cuidao dijeeeee 😰😰😰'
+      };
+    }
+  };
+
+  const gifContent = getGifContent();
 
   return (
     <div className={styles.overlay}>
       <div className={styles.gifContainer}>
         <Image
-          src="/images/perlayif.gif"
+          src={gifContent.src}
           alt="Gif especial"
           width={400}
           height={400}
@@ -34,7 +51,7 @@ const SpecialGif = ({ categoryId, show }) => {
           priority
         />
         <div className={styles.message}>
-          😰😰😰 aiii cuidao 😰😰😰
+          {gifContent.message}
         </div>
       </div>
     </div>
