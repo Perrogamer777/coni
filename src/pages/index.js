@@ -56,7 +56,7 @@ const Home = () => {
               <div className={styles.completedSection}>
 
                 <p className={styles.completedSubtext}>
-                  ya q leiste todo, ahora tiene acceso a algo confidencial...
+                  ya q leiste todo, ahora tienes acceso a algo confidencial...
                 </p>
                 <button 
                   className={styles.loveLetterButton}
